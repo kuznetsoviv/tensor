@@ -3,15 +3,20 @@
   <head>
       <meta charset="UTF-8">
       <title>Weather application!</title>
+      <script crossorigin src="https://unpkg.com/react@16/umd/react.production.min.js"></script>
+      <script crossorigin src="https://unpkg.com/react-dom@16/umd/react-dom.production.min.js"></script>
+      <script src="https://unpkg.com/@material-ui/core@latest/umd/material-ui.development.js" crossorigin="anonymous"></script>
+      <script src="https://unpkg.com/babel-standalone@latest/babel.min.js" crossorigin="anonymous"></script>
+      <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:300,400,500,700&display=swap" />
+      <link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons" />
+      <script src="scripts/cities.js"></script>
+      <script type="text/babel" src="scripts/weather.table.js"></script>
       <link rel="stylesheet" type="text/css" href="styles/style.css">
-      <script src="libs/react.development.js"></script>
-      <script src="libs/react-dom.development.js"></script>
-      <script src="scripts/weather.table.js"></script>
    </head>
    <body>
       <h2>Погода в городах</h2>
       <div id="weather"></div>
-      <script type="text/javascript">
+      <script type="text/babel">
         const domContainer = document.querySelector('#weather');
         let cities = [
           'Rybinsk',
@@ -25,7 +30,7 @@
           'Barcelona'
         ];
         ReactDOM.render(
-          e(WeatherTable, {cities: cities}, null),
+          React.createElement(WeatherTable, {cities}, null),
           domContainer
         );
       </script>
